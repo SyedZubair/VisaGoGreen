@@ -1,0 +1,45 @@
+<script>
+//Function does the encryption of given string
+function encrypt(str, x){
+
+	if(str!= null || x!= null){
+
+		//initializing variables
+		var n = str.length, finalString = '';
+		
+		//looping through string to amend number
+		for(var i = 0; i < n; i++){
+			finalString+= str[i]+x;
+		}
+		console.log('finalString: '+finalString);
+		//display the output
+		document.write('Entered String: '+ str);
+		document.write('<br><br>');
+		document.write('Encrypted String: '+ finalString);
+		document.write('<br><br>');
+		document.write('Decrypted String: '+ decrypt(finalString));
+	}else{
+		document.write('Input the string and number to encrypt');
+	}
+}
+
+
+function decrypt(estr){
+	let str = String(estr);var str_de = '';
+    for( let i = 0; i < str.length; i++){
+        if(isNaN(str.charAt(i))){
+        	str_de+= str.charAt(i);
+        }
+    }
+	return str_de;
+}
+
+// Input the string
+var s = "Meenu Maria";
+var n = s.length;
+
+encrypt(s,30);
+
+
+
+</script>
